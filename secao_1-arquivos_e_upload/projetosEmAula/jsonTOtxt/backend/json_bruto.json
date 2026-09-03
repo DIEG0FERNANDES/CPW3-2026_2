@@ -1,0 +1,17 @@
+[
+  {
+    "nome": "Milena Alegre",
+    "email": "mi@exemplo.com",
+    "telefone": "999999999"
+  },
+  {
+    "nome": "Maria Santos",
+    "email": "maria@exemplo.com",
+    "telefone": "21988887777"
+  },
+  {
+    "nome": "Daniel Sousa",
+    "email": "dani@exemplo.com",
+    "telefone": "31977776666"
+  }
+]

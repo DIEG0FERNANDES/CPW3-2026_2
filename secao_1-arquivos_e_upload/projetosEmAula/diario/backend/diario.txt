@@ -1,0 +1,2 @@
+[LP2]: HJ aprendemos sobre CRUD entre outras coisas mais divertidas
+[CPW3]: Aprendemos como manipular arquivos utilizando os métodos já existentes no node: path e fs!
