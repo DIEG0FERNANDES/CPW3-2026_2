@@ -1,0 +1,16 @@
+{
+  "name": "api-jogos",
+  "version": "1.0.0",
+  "description": "API de jogos - Lista 01 (Node.js + Express)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
