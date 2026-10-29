@@ -1,41 +1,39 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/style.css" />
 
     <title>Login</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="login">
-        <h2>Acesso ao Sistema</h2>
+      <h2>Acesso ao Sistema</h2>
 
-        <form action="/login" method="post">
-            <label for="user">Login</label>
-            <input
-                type="text"
-                name="user"
-                id="user"
-                placeholder="Digite seu login"
-                required
-            >
+      <form action="/login" method="post">
+        <label for="user">Login</label>
+        <input
+          type="text"
+          name="user"
+          id="user"
+          placeholder="Digite seu login"
+          required
+        />
 
-            <label for="pass">Senha</label>
-            <input
-                type="password"
-                name="pass"
-                id="pass"
-                placeholder="Digite sua senha"
-                required
-            >
+        <label for="pass">Senha</label>
+        <input
+          type="password"
+          name="pass"
+          id="pass"
+          placeholder="Digite sua senha"
+          required
+        />
 
-            <button type="submit">
-                Entrar
-            </button>
-        </form>
+        <button type="submit">Entrar</button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

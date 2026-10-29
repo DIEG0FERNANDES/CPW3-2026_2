@@ -3,53 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <title>Dashboard Protegido</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="card">
-      <div class="status"><i></i> Sessão ativa</div>
-      <h1>Bem-vindo ao Dashboard!</h1>
-      <p>Se você está vendo isso, sua sessão está ativa.</p>
+    <h1>Bem-vindo ao Dashboard!</h1>
+    <p>Se você está vendo isso, sua sessão está ativa.</p>
 
-      <h2>Lista de Produtos</h2>
-      <table border="1" id="tabela-produtos">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      <script>
-        fetch("/api/produtos")
-          .then((response) => response.json())
-          .then((produtos) => {
-            const tbody = document.querySelector("#tabela-produtos tbody");
-            tbody.innerHTML = "";
+    <h2>Lista de Produtos</h2>
+    <table border="1" id="tabela-produtos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Preço (R$)</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-            produtos.forEacg((prod) => {
-              const tr = document.createElement("tr");
-              tr.innerHTML = `
-            <td>${prod.id}</td>
-            <td>${prod.nome}</td>
-            <td>${prod.preco.toFixed(2)}</td>
-            <td>${prod.quantidade}</td>
-            `;
-            });
+    <br />
+    <!-- Botão de Logout -->
+    <a href="/logout"><button>Sair do Sistema</button></a>
+
+    <script>
+      fetch("/api/produtos")
+        .then((response) => response.json())
+        .then((produtos) => {
+          const tbody = document.querySelector("#tabela-produtos tbody");
+          tbody.innerHTML = "";
+
+          produtos.forEach((prod) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+<td>${prod.id}</td>
+<td>${prod.nome}</td>
+<td>R$ ${prod.preco.toFixed(2)}</td>
+<td>${prod.quantidade}</td>
+`;
+            tbody.appendChild(tr);
           });
-      </script>
-      <!-- Botão de logout -->
-      <a class="btn" href="/logout">Sair do Sistema</a>
-    </main>
+        })
+        .catch((err) => console.error("Erro ao carregar produtos:", err));
+    </script>
   </body>
 </html>
